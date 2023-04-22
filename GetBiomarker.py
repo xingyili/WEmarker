@@ -63,9 +63,11 @@ for i in tqdm(range(embeddings.shape[0])):
             sim_AB = cosine_similarity(embeddings[i, :].reshape(
                 1, -1), embeddings[j, :].reshape(1, -1))  # 计算矩阵向量间的相似度
             Similarity[i][j] = sim_AB
-np.save("Similarity.npy", Similarity)
+#np.save("./SimilarityMatrix/Similarity.npy", Similarity)
 print("Similarity Matrix Completed!")
 print("Network Propagation!")
+
+
 def Random_Walkwith_Restart(Similarity, P0, N_max_iter=100, r_restart=0.1, Eps_min_change=1e-6):
     # !!!必须让Similarity的每一列相加都为1，后面的网络传播算法才是有效的
     normal_Similarity = Similarity/Similarity.sum(axis=1)
@@ -94,19 +96,20 @@ def Random_Walkwith_Restart(Similarity, P0, N_max_iter=100, r_restart=0.1, Eps_m
         Score.items(), key=lambda x: x[1], reverse=True)  # 依据重要性排序
     return dict(Score_sort)
 
+
 # 构造P0，也就是随机游走的初始值
-with open("./model/index2word.json", 'r') as file:  
+with open("./model/index2word.json", 'r') as file:
     index2word = json.load(file)
 file.close()
 
-with open("./allscore/all_score_GSE1456.json", 'r') as file:  
+with open("./allscore/all_score_GSE1456.json", 'r') as file:
     gene_score = json.load(file)
 file.close()
 
 gene_inipr = {}  # 从初始打分中筛选出相应的基因
 i = 0
 for index in index2word:
-    if index not in gene_score.keys():  
+    if index not in gene_score.keys():
         score = 0
     else:
         score = gene_score[index]
