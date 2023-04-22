@@ -16,7 +16,7 @@ File input format of the WMNE algorithm：
 Layer  head  tail  weight
   l1    n1    n2     w1
   l2    n3    n4     w2
-  l2    n5    n6     w3
+  l3    n5    n6     w3
             .
             .
             .
