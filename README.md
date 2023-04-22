@@ -6,7 +6,7 @@ WEmarker: breast cancer-specific prognostic analysis with weighted multiplex net
 
 `./Network Enhancement/main.m` is the main script to run NE. The format of the input is a collar matrix. 
 
-## Weighted Multiplex Network Embedding
+## Weighted Multiplex Network Embedding(WMNE)
 
 ### Input
 
