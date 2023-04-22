@@ -44,6 +44,6 @@ python GetBiomarker.py
 ```
 
 - Make sure you get the embedding vector before then.
--  `./allscore/all_score_GSE1456.json` holds the initial score for each gene in *GSE1456*, you can replace it with your own data
+-  `./allscore/all_score_GSE1456.json` holds the initial score for each gene in *GSE1456*, you can replace it with your own data.
 - The gene ranking file obtained after running is saved in `./Biomarker`.
 
