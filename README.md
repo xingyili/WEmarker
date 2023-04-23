@@ -35,7 +35,7 @@ python train_model.py
 
 ### Acknowledgment
 
-WMNE is developed on the basis of [MNE](https://github.com/HKUST-KnowComp/MNE), for which we are sincerely grateful.
+WMNE is developed based on [MNE](https://github.com/HKUST-KnowComp/MNE), for which we are sincerely grateful.
 
 ## Get biomarker
 
